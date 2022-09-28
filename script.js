@@ -9,31 +9,42 @@
 
 // display status
 // ask to play agian
+var wins = 0
+var losses = 0
+var draws = 0
 
-var choice = prompt("ROCK, PAPER, SCISSORS")
+function startGames() {
+        var choice = prompt("ROCK, PAPER, SCISSORS").toUpperCase()
 
-console.log(choice)
+        var computerOptions = ["ROCK", "PAPER", "SCISSORS"]
 
-var computerOptions = ["ROCK", "PAPER", "SCISSORS"]
+        var computerChoice = (computerOptions[Math.floor(Math.random() * computerOptions.length)]
 
-
-var computerChoice = computerOptions[Math.floor(Math.random() * computerOptions.length)]
-
-console.log(computerChoice)
-
+}
 
 if (choice == computerChoice) {
-        console.log("Draw")
-
-// }     else if ((choice !== "ROCK", "PAPER", "SCISSORS")) {
-//             console.log("Please select appropriate choice.")
-//             Program.restart()
-             
+        draws++
+        alert("Draw")
+        
 }   else if (((choice == "ROCK") && (computerChoice == "PAPER")) || ((choice == "SCISSORS") && (computerChoice == "ROCK")) || ((choice == "PAPER") && (computerChoice == "SCISSORS"))) {
-        console.log("Lose")
-}   else 
-console.log("win")
+        losses++
+        alert("Lose")
+}   else {
+        win++
+        alert("win")
+}
+alert('Stats:
+        Wins: ${wins}
+        Draws: ${draws}
+        Losses: ${losses}')
 
+        var play - confirm("Play again??")
+        if (play) {
+                startGames()
+
+        }
+
+        startGame();
 //Play again?
 // var again = confirm("Would you like to play again?")
 
